@@ -2,14 +2,25 @@
 
 import Cocoa
 
-var str = "Hello, playground"
+var myMessage: String
 
-extension String
+myMessage = "hello my name is carlos"
+
+var characters: Int = myMessage.characters.count
+
+var key: [Int] = []
+
+var asciiValue: [Int] = []
+
+var letters: [String] = []
+
+for character in myMessage.characters
 {
-    var ascii: [UInt8?]
-    {
-        return unicodeScalars.map {$0.isASCII() ? UInt8($0.value) : nil}
-    }
+    key += [Int(arc4random_uniform(100000))]
+    letters += [String(character)]
 }
 
-"Hello world`eeee".ascii
+for scalar in myMessage.unicodeScalars
+{
+    asciiValue += [Int(scalar.value)]
+}
