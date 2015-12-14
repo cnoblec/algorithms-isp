@@ -19,7 +19,7 @@ class Sketch {
     var width = 25
     var height = 25
     var x = 0
-    var s = 5
+    var s = 2
     var x2 = 0
     var s2 = 0
     
@@ -49,7 +49,7 @@ class Sketch {
         
         // Bounce when hitting wall
         if (x + (width / 2) > canvas.width || x < width/2 || x == x2 ) {
-            s *= -2
+            s *= -1
         }
         if (x2 + (width / 2) > canvas.width || x2 < width/2) {
             s2 *= -15/10
