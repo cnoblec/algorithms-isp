@@ -6,7 +6,7 @@ import Cocoa
 var myMessage: String
 
 //Input message to be decoded
-myMessage = "I am Groot"
+myMessage = "I am GrootzZ"
 
 // Counts the number of characters in the input text.
 var characters: Int = myMessage.characters.count
@@ -23,14 +23,25 @@ var encodedText: [Int] = []
 // Create empty array to store each letter in
 var letters: [String] = []
 
+var randomValue = 0
+
+var upperBoudary = 999877
+
+var lowerBoudary = 99968
+
 //
 // This portion of the code encodes the text input.
 //
 
 for character in myMessage.characters
 {
+    randomValue = Int(arc4random_uniform(1000000))
     
-    key += [Int(arc4random_uniform(10000000))]
+    while randomValue < lowerBoudary || randomValue > upperBoudary
+    {
+        randomValue = Int(arc4random_uniform(10000000))
+    }
+    key += [randomValue]
     letters += [String(character)]
 }
 
