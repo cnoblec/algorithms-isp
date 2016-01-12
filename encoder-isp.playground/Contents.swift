@@ -39,7 +39,7 @@ for character in myMessage.characters
     
     while randomValue < lowerBoudary || randomValue > upperBoudary
     {
-        randomValue = Int(arc4random_uniform(10000000))
+        randomValue = Int(arc4random_uniform(1000000))
     }
     key += [randomValue]
     letters += [String(character)]
