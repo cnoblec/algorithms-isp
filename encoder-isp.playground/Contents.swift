@@ -2,10 +2,10 @@
 
 import Cocoa
 
-//Creat an empty string to store input message
+// Creat an empty string to store input message
 var myMessage: String
 
-//Input message to be decoded
+// Input message to be decoded
 myMessage = "I am GrootzZ"
 
 // Counts the number of characters in the input text.
@@ -20,11 +20,16 @@ var asciiValue: [Int] = []
 // Create empty array to store the encoded in
 var encodedText: [Int] = []
 
+// Create empty array to store the encoded in
+var decodedText: [Int] = []
+
 // Create empty array to store each letter in
 var letters: [String] = []
 
+// Creating an empty variable to store a random variable
 var randomValue = 0
 
+// Set the upper and lower boundary for the random variable
 var upperBoudary = 999877
 
 var lowerBoudary = 99968
@@ -56,5 +61,12 @@ for (var i = 0; i < characters; i++)
     
 }
 
+for (var i = 0; i < characters; i++)
+{
+    decodedText += [encodedText[i] - key[i]]
+}
+
+
 var test : String = String(encodedText[0])
 var aLetterCode : Int = 87
+
