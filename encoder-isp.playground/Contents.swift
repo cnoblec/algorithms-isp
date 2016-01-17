@@ -6,7 +6,7 @@ import Cocoa
 var myMessage: String
 
 // Input message to be decoded
-myMessage = "I am GrootzZ"
+myMessage = "Square 3 contains the bottom of a ladder that moves you up to square 11."
 
 // Counts the number of characters in the input text.
 var characters: Int = myMessage.characters.count
@@ -81,4 +81,9 @@ for (var i = 0; i < characters; i++)
     decodedTextArray += [encodedText[i] - key[i]]
 }
 
-String(UnicodeScalar(decodedTextArray[3]))
+// Runs the amount of times that there are characters
+for (var i = 0; i < characters; i++)
+{
+    //Add the letter that corresponds to the ascii value to a string to get final message
+    decodedTextString += String(UnicodeScalar(decodedTextArray[i]))
+}
