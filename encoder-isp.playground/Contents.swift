@@ -78,6 +78,7 @@ for (var i = 0; i < characters; i++)
 {
     // Add the key and ascii value to get the 6 digit number to represent each character
     encodedTextArray += [key[i] + asciiValue[i]]
+    
     // Adds the numbers to a String to be displayed as the encoded text
     encodedTextString += String(key[i] + asciiValue[i])
 }
