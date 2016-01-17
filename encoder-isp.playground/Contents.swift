@@ -21,10 +21,7 @@ var asciiValue: [Int] = []
 var encodedText: [Int] = []
 
 // Create empty array to store the decoded text in
-var decodedTextArray: [Int] = []
-
-// Create empty string to store the decoded text in
-var decodedTextString: String = ""
+var decodedText: [String] = []
 
 // Create empty array to store each letter in
 var letters: [String] = []
@@ -74,16 +71,13 @@ for (var i = 0; i < characters; i++)
     encodedText += [key[i] + asciiValue[i]]
 }
 
-// Runs the amount of times that there are characters
-for (var i = 0; i < characters; i++)
-{
-    // decode the text by subtracting the key from the encoded text
-    decodedTextArray += [encodedText[i] - key[i]]
-}
+//
+// This portion of the code decodes the encoded text
+//
 
 // Runs the amount of times that there are characters
 for (var i = 0; i < characters; i++)
 {
-    //Add the letter that corresponds to the ascii value to a string to get final message
-    decodedTextString += String(UnicodeScalar(decodedTextArray[i]))
+    // decode the text by subtracting the key from the encoded text
+    decodedText += [String(UnicodeScalar(encodedText[i] - key[i]))]
 }
