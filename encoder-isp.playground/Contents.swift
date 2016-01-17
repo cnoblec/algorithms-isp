@@ -1,4 +1,10 @@
-//: Playground - noun: a place where people can play
+/*
+
+Carlos Noble Curveira
+Mr. Gordon
+Sun Jan 17 2016
+
+*/
 
 import Cocoa
 
@@ -8,7 +14,7 @@ var myMessage: String
 // Input message to be decoded
 myMessage = "Square 3 contains the bottom of a ladder that moves you up to square 11."
 
-// Counts the number of characters in the input text.
+// Counts the number of characters in the input text
 var characters: Int = myMessage.characters.count
 
 // Create empty array to store the key for each letter in
@@ -18,10 +24,13 @@ var key: [Int] = []
 var asciiValue: [Int] = []
 
 // Create empty array to store the encoded text in
-var encodedText: [Int] = []
+var encodedTextArray: [Int] = []
+
+// Create empty String to display the encoded "text"
+var encodedTextString: String = ""
 
 // Create empty array to store the decoded text in
-var decodedText: [String] = []
+var decodedText: String = ""
 
 // Create empty array to store each letter in
 var letters: [String] = []
@@ -68,7 +77,9 @@ for ascii in myMessage.unicodeScalars
 for (var i = 0; i < characters; i++)
 {
     // Add the key and ascii value to get the 6 digit number to represent each character
-    encodedText += [key[i] + asciiValue[i]]
+    encodedTextArray += [key[i] + asciiValue[i]]
+    // Adds the numbers to a String to be displayed as the encoded text
+    encodedTextString += String(key[i] + asciiValue[i])
 }
 
 //
@@ -79,5 +90,5 @@ for (var i = 0; i < characters; i++)
 for (var i = 0; i < characters; i++)
 {
     // decode the text by subtracting the key from the encoded text
-    decodedText += [String(UnicodeScalar(encodedText[i] - key[i]))]
+    decodedText += String(UnicodeScalar(encodedTextArray[i] - key[i]))
 }
