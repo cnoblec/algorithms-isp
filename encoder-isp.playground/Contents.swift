@@ -39,9 +39,9 @@ var letters: [String] = []
 var randomValue = 0
 
 // Set the upper and lower boundary for the random variable
-var upperBoudary = 999877
+let upperBoudary = 999877
 
-var lowerBoudary = 99968
+let lowerBoudary = 99968
 
 //
 // This portion of the code encodes the text input.
